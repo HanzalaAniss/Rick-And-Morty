@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:PanCake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             xmlns:local="clr-namespace:RM"
+             BackgroundColor="Black"
+             x:Class="RM.MainPage">
+
+    <StackLayout Margin="5">
+      
+        <Image Source="{local:ImageResource RM.Resources.logo.jpg}" Aspect="AspectFill" HorizontalOptions="CenterAndExpand" VerticalOptions="Start" ></Image>
+        <StackLayout Orientation="Horizontal">
+            <Button x:Name="MusicButton" Clicked="MusicButton_Clicked" HorizontalOptions="StartAndExpand"  VerticalOptions="Center" 
+         BorderWidth="2" CornerRadius="30" WidthRequest="50" BackgroundColor="#24e12e" BorderColor="#e4e2e1" 
+         ImageSource="{local:ImageResource RM.Resources.volume.png}"></Button>
+            <Button x:Name="FilterButton"  Clicked="FilterButton_Clicked" HorizontalOptions="End"  VerticalOptions="Center" 
+         BorderWidth="2" CornerRadius="30" WidthRequest="50" BackgroundColor="#24e12e" BorderColor="#e4e2e1" 
+         ImageSource="{local:ImageResource RM.Resources.filter.png}"></Button>
+        </StackLayout>
+        <ActivityIndicator VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" x:Name="loader" Color="#24e12e" IsRunning="True" ></ActivityIndicator>
+        
+        <CollectionView 
+            Margin="10"
+            VerticalScrollBarVisibility="Never" 
+            x:Name="LV"
+            VerticalOptions="StartAndExpand">
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Orientation="Vertical"   Span="2" />
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid ColumnDefinitions="*,*" RowDefinitions="*,Auto,Auto" Padding="8" HeightRequest="300">
+                        <PanCake:PancakeView CornerRadius="20,20,20,20" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+                            <Image Source="{Binding image}" Aspect="AspectFill" x:Name="viewImage">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"  CommandParameter="{Binding .}" >
+
+                                    </TapGestureRecognizer>
+
+                                </Image.GestureRecognizers>
+                            </Image>
+                        </PanCake:PancakeView>
+
+                        <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding name}" HorizontalOptions="CenterAndExpand" FontSize="Medium" FontFamily="get_schwifty" TextColor="#24e12e"/>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+
+</ContentPage>

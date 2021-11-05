@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:RM"
+             x:Class="RM.DetailsPage">
+
+    <Grid BackgroundColor="Black">
+        <Image   VerticalOptions="Start" x:Name="Image" Aspect="AspectFill"  HeightRequest="400" />
+        <StackLayout Grid.Row="0" BackgroundColor="black" VerticalOptions="End">
+            <Frame CornerRadius="40" Style="{StaticResource stlMainFrame}" BackgroundColor="#013a4c" >
+                <Grid Padding="25,10,25,0" RowSpacing="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" x:Name="lblName" FontFamily="get_schwifty" FontAttributes="Bold" FontSize="30" TextColor="#24e12e"/>
+
+                    <Label Grid.Row="1" Grid.Column="0" Text="Status" Style="{StaticResource stlBoardTitle}"  FontFamily="get_schwifty"/>
+                    <Label Grid.Row="2" Grid.Column="0" x:Name="lblStatus" Style="{StaticResource stlBoardDesc}" FontFamily="get_schwifty"/>
+
+                    <Label Grid.Row="1" Grid.Column="1" Text="Species" Style="{StaticResource stlBoardTitle}" FontFamily="get_schwifty"/>
+                    <Label Grid.Row="2" Grid.Column="1" x:Name="lblSpecies" Style="{StaticResource stlBoardDesc}" FontFamily="get_schwifty"/>
+
+                    <Label Grid.Row="1" Grid.Column="2" Text="Gender" Style="{StaticResource stlBoardTitle}" FontFamily="get_schwifty"/>
+                    <Label Grid.Row="2" Grid.Column="2" x:Name="lblGender" Style="{StaticResource stlBoardDesc}" FontFamily="get_schwifty"/>
+
+
+                    <Label Grid.Row="3" Grid.Column="0" Text="Origin" Style="{StaticResource stlBoardTitle}" FontFamily="get_schwifty" />
+                    <Label Grid.Row="4" Grid.Column="0" x:Name="lblOrigin" Style="{StaticResource stlBoardDesc}" FontFamily="get_schwifty"/>
+
+                    <Label Grid.Row="3" Grid.Column="1" Text="Location" Style="{StaticResource stlBoardTitle}" FontFamily="get_schwifty"/>
+                    <Label Grid.Row="4" Grid.Column="1" x:Name="lblLocation" Style="{StaticResource stlBoardDesc}" FontFamily="get_schwifty"/>
+
+                    <Label Grid.Row="3" Grid.Column="2" Text="Created" Style="{StaticResource stlBoardTitle}" FontFamily="get_schwifty"/>
+                    <Label Grid.Row="4" Grid.Column="2" x:Name="lblCreated" Style="{StaticResource stlBoardDesc}" FontFamily="get_schwifty"/>
+                </Grid>
+            </Frame>
+        </StackLayout>
+    </Grid>
+
+</ContentPage>
